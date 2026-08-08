@@ -14,6 +14,8 @@
 | [notion-markdown](skills/notion-markdown) | Notion の拡張 Markdown は方言。素の Markdown を送ると数式・太字・表が崩れるので、送信前に検査を通す |
 | [notion-figure-insert](skills/notion-figure-insert) | PDF から図だけを切り出し、対応する Notion ページ本文の該当箇所に挿入する |
 | [notion-pdf-split](skills/notion-pdf-split) | Notion に取り込む前に、PDF の先頭ページを落として分割する |
+| **予定** | |
+| [calendar-scheduling](skills/calendar-scheduling) | Googleカレンダーを横断して空き時間を出し、予定を重複なく登録する。曜日の検算と時間枠での重複照合つき |
 | **組版・検証** | |
 | [typst-ja-pdf](skills/typst-ja-pdf) | Markdown を正本にしたまま Typst で日本語 PDF を組む。代替フォント混入の検算つき |
 | [c-strict-verify](skills/c-strict-verify) | C コードを厳格コンパイル→サンプル入出力照合→判定スクリプトの順で検証する |
@@ -113,6 +115,15 @@ Notion まわりは関心ごとに4つに分けてある。入口は `notion-rou
 追加ブロックをサブエージェントで並列生成し、統合・整合・レビューを親セッションが担う。仕上げに `humanizer-ja-modes` の academic モードで AI 臭を抜き、字数を検証して終わる。
 
 数値は元データにある値しか使わせない。サブエージェントに新しい数値を作らせないための制約を明記してある。
+
+## calendar-scheduling
+
+LLM にカレンダーを触らせたときに実際に起きる失敗を、手順で潰す構成にしてある。
+
+- **`list_calendars` から始める。** primary だけ見ると、別カレンダーの予定を見落として「空いている」と答えてしまう
+- **曜日は基準日から数えて検算する。** 日付から曜日を導く計算はずれる。提示する日付には必ず曜日を併記する
+- **重複チェックはキーワード検索ではなく時間枠で行う。** 同じ予定が英字・カタカナ・大文字小文字・末尾スペースの4方向に表記ゆれし、`q=` の検索から漏れて同じ枠に2件作る
+- **書き込み前に一覧を表で提示して承認を取る。** 読み取りの失敗はやり直せるが、書き込みの失敗は「重複」として残る
 
 ## c-strict-verify
 
