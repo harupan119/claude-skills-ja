@@ -1,9 +1,9 @@
 ---
-name: humanizer-ja-pro
+name: humanizer-ja-modes
 description: AI生成の日本語からAI臭を抜き、人間が書いた文章に直す統合スキル。レジスタを3モード（口語=casual／アカデミック=academic／ビジネスフォーマル=business）に分け、文体ごとに rewrite 方針を切り替える。記号残骸・語彙偏り・思考構造の型を3層で検出。AIっぽい文章を人間っぽくする、AI臭を抜く、humanize、推敲、レポートのAI臭チェックやAI度判定で使う。英語スロップ系（blader/humanizer・anti-ai-slop-writing）と日本語系（gonta223・makotofalcon・matsui academic）を統合した上位版。旧 humanizer-ja / humanizer-ja-academic を完全に置き換える。
 ---
 
-# Humanizer JA Pro — 日本語のAI臭を抜く統合スキル
+# humanizer-ja-modes — 日本語のAI臭を3レジスタで抜く
 
 AI（Claude・ChatGPT・Gemini等）が書いた日本語から「AI臭さ」を除去し、人間が書いたように読める文章に直す。**検出ルールは全モード共通でここ（SKILL.md）に置き、書き換え方針だけをモード別ファイルに分けてある**（重複を作らないための設計）。
 
@@ -24,7 +24,7 @@ blader/humanizer（33パターン＋誤検出ガード＋プロセス）／ jala
 | **business（ビジネスフォーマル）** | 就活ES・志望動機・ビジネスメール・社外文書・申請書 | ですます／敬体・簡潔 | 控えめ（媚びない率直さ・具体。スラング不可） | [modes/business/MODE.md](modes/business/MODE.md) |
 
 判定の指針:
-- **だ・である調・無人称・客観**なら → academic。ですます化・体温注入は厳禁。**TUATレポートは常にacademic。**
+- **だ・である調・無人称・客観**なら → academic。ですます化・体温注入は厳禁。**大学レポート・論文は常にacademic。**
 - **ですます／タメ口で主観OK、私的・娯楽的**なら → casual。
 - **ですます・敬体だが対外的・評価される文書**（就活・取引先・公式申請）なら → business。砕けすぎず、媚びず、AI的丁寧テンプレも避ける。
 - 迷ったら確認する。casual と business の差は「私的か、評価者がいるか」で切る。
@@ -35,7 +35,7 @@ blader/humanizer（33パターン＋誤検出ガード＋プロセス）／ jala
 
 ## AI度判定（レビュー用途）
 
-「この文章はどれくらいAIっぽいか」を**採点**するなら → [references/ai-score-rubric.md](references/ai-score-rubric.md) を使う。検出した tell の重み・密度から AI度スコアと根拠を出す。`tuat-report` / `report-expansion` は仕上げ工程でこれを呼び、レポートのAI度を判定する。
+「この文章はどれくらいAIっぽいか」を**採点**するなら → [references/ai-score-rubric.md](references/ai-score-rubric.md) を使う。検出した tell の重み・密度から AI度スコアと根拠を出す。`report-expand` は仕上げ工程でこれを呼び、レポートのAI度を判定する。
 
 ---
 

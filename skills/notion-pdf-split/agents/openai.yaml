@@ -1,0 +1,3 @@
+interface:
+  display_name: "Notion PDF Split"
+  short_description: "Notion に取り込みやすいよう PDF の先頭ページを落として分割する"

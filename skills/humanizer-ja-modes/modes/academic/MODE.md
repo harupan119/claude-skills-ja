@@ -1,6 +1,6 @@
 # モード: academic（アカデミック）
 
-対象: 大学レポート・論文・実験考察・仕様書・申請書の技術本文。**TUATレポートは常にこのモード**（`tuat-report` の規約と併用）。
+対象: 大学レポート・論文・実験考察・仕様書・申請書の技術本文。提出先の書式規約がある場合は、その規約と併用する。
 
 SKILL.md の第1〜3層で検出したあと、ここの方針で書き換える。`humanizer-ja-academic`（旧スキル）と matsui academic の規律を統合。**register（だ・である・無人称・客観）を維持したままAI臭だけ抜く。**
 
@@ -37,4 +37,4 @@ SKILL.md の第1〜3層で検出したあと、ここの方針で書き換える
 
 ## 仕上げ後のAI度判定
 
-レポートとして提出する前に [../../references/ai-score-rubric.md](../../references/ai-score-rubric.md) で AI度を採点し、強い tell が残っていないか確認する。`tuat-report` / `report-expansion` はこの工程を組み込んでいる。
+レポートとして提出する前に [../../references/ai-score-rubric.md](../../references/ai-score-rubric.md) で AI度を採点し、強い tell が残っていないか確認する。`report-expand` はこの工程を組み込んでいる。

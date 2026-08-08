@@ -1,6 +1,6 @@
 # 本人の文体指紋。私的な文章から作るため公開しない。
-# 雛形は skills/humanizer-ja-pro/modes/casual/voice-print-ja.template.md
-skills/humanizer-ja-pro/modes/casual/voice-print-ja.md
+# 雛形は skills/humanizer-ja-modes/modes/casual/voice-print-ja.template.md
+skills/humanizer-ja-modes/modes/casual/voice-print-ja.md
 
 __pycache__/
 *.pyc

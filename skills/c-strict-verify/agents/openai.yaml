@@ -1,0 +1,3 @@
+interface:
+  display_name: "C Strict Verify"
+  short_description: "C コードを厳格コンパイル→サンプル入出力照合→判定スクリプトの順で検証する"

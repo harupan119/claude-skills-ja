@@ -1,13 +1,13 @@
 ---
-name: tuat-report-pdf
-description: "TUATレポートの report.md を正本にしたまま Typst で提出用 PDF まで作る。変換スクリプトを挟んで本文と PDF の乖離を防ぎ、MS 明朝／MS ゴシックで組む。『PDFまで作って』『PDF化して』『Typstで組んで』『レポートのPDF作り直して』『フォントをMS明朝で』等で使う。Codex に DOCX/PDF を委ねる経路（tuat-report-writing）の代わりに Claude 側で完結させる時の手順。本文生成は tuat-report。"
+name: typst-ja-pdf
+description: "Markdown を正本にしたまま Typst で日本語の提出用 PDF を組む。変換スクリプトを挟んで本文と PDF の乖離を防ぎ、MS 明朝／MS ゴシックで和文を組む。『PDFまで作って』『PDF化して』『Typstで組んで』『レポートのPDF作り直して』『フォントをMS明朝で』等で使う。レポート・論文・申請書など、体裁が指定された日本語文書が対象。代替フォント混入の検算手順つき。"
 ---
 
-# TUAT レポート PDF 化（Typst 経路・Claude 側）
+# typst-ja-pdf — Markdown を正本に日本語 PDF を組む
 
 ## 概要
 
-`report.md` を**正本**とし、変換スクリプト `md_to_typst.py` で Typst ソースを起こして `typst compile` する。`shared/codex-execution.md`（Codex が DOCX 経由で PDF を作る経路）と対になる、Claude 側の実行手順。
+`report.md` を**正本**とし、変換スクリプト `md_to_typst.py` で Typst ソースを起こして `typst compile` する。DOCX を経由せず Markdown から直接 PDF まで通す経路。
 
 **Typst を直接書かない。** 中間レポートで正本 `report.md` と提出 PDF が乖離し、提出版が正になってしまう保守負債が実際に生じた。変換を挟めば本文を直すだけで PDF が追従する。
 
@@ -15,9 +15,9 @@ description: "TUATレポートの report.md を正本にしたまま Typst で�
 
 | 状況 | 経路 |
 |---|---|
-| ユーザーが「PDFまであなたに」と言った | この経路（Typst） |
-| DOCX 提出が要る、Word の校閲機能を使う | `tuat-report-writing`（Codex / OOXML） |
-| 本文をまだ書いていない | 先に `tuat-report` |
+| Markdown を正本にして PDF まで通したい | この経路（Typst） |
+| DOCX 提出が要る、Word の校閲機能を使う | この経路ではなく OOXML 系のツールを使う |
+| 本文をまだ書いていない | 先に本文を確定させる。体裁は後 |
 
 ## 前提
 
@@ -29,9 +29,9 @@ description: "TUATレポートの report.md を正本にしたまま Typst で�
 
 1. **本文を確定させる。** `report.md` が正本。以降、`report.typ` を手で編集しない（変換のたびに消える）。
 2. **フォントを用意する。** 初回のみ。`references/fonts.md` の導入手順。
-3. **変換スクリプトを作業フォルダに置いて調整する。** `assets/md_to_typst.py` を写し、冒頭の `EQUATIONS`（数式の対応表）と `PREAMBLE` 内の表紙（科目名・テーマ・担当教員・提出日・学籍番号・氏名）をそのレポートに合わせる。
+3. **変換スクリプトを作業フォルダに置いて調整する。** `assets/md_to_typst.py` を写し、冒頭の `EQUATIONS`（数式の対応表）と `PREAMBLE` 内の表紙項目（表題・所属・提出日・氏名など、提出先が指定するもの）をその文書に合わせる。
 4. **図を作る。** `make_figures.py`。図中の日本語は本文と字種を揃える（本文が明朝なら図はゴシック）。
-5. **組む。** `python md_to_typst.py && typst compile report.typ <学籍番号>_<課題名>.pdf`
+5. **組む。** `python md_to_typst.py && typst compile report.typ <出力名>.pdf`（提出先にファイル名規則があればそれに従う）
 6. **検算する。** 下の「提出前の検算」を全部通す。
 7. **梱包する。** 再現に要るファイルだけを zip に入れ、**展開した副本だけで** ビルド・検証・PDF 再生成が通ることを確かめる。
 
@@ -82,6 +82,6 @@ zip には再現に要るものだけ入れる。入れないもの：`.venv`、
 - `scripts/font_coverage.py` — 指定フォントに字形が無い文字を本文から洗い出す。
 - `references/fonts.md` — MS フォントの導入、埋め込み可否の確認、3つの落とし穴。
 
-## 科目フォルダへの追記
+## 次回のための記録
 
-処理し終えたら、固定値・ファイル名規則・締切・効いた工夫を科目ごとのメモに残し、次回はそれを読んでから着手する。`tuat-report` スキルと併用しているなら `shared/courses/<科目名>/<回>.md` が置き場所。
+処理し終えたら、固定値・ファイル名規則・締切・効いた工夫を提出先ごとのメモに残し、次回はそれを読んでから着手する。同じ提出先に繰り返し出す文書では、この記録が毎回の調整時間をそのまま削る。
