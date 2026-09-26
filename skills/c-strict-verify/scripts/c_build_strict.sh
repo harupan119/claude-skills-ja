@@ -8,6 +8,8 @@ fi
 
 CC_CMD="${CC:-cc}"
 CFLAGS="${CFLAGS:--Wall -Wextra -Werror}"
+# 最適化レベル違いのバイナリを並べて作るときに使う（例: OUT_SUFFIX=.O2）
+OUT_SUFFIX="${OUT_SUFFIX:-}"
 
 for src in "$@"; do
   case "$src" in
@@ -18,7 +20,7 @@ for src in "$@"; do
       ;;
   esac
 
-  out="${src%.c}"
+  out="${src%.c}${OUT_SUFFIX}"
   echo "[BUILD] $src -> $out"
   # shellcheck disable=SC2086
   "$CC_CMD" $CFLAGS "$src" -o "$out"

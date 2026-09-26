@@ -49,6 +49,19 @@ blader/humanizer（33パターン＋誤検出ガード＋プロセス）／ jala
 
 ---
 
+## このスキルでできること・できないこと（研究知見）
+
+**目的は、読み手が引っかかる箇所を直して文章の質を上げることであって、AI 判定器をすり抜けることではない。** 後者は約束できない。理由は研究で分かっている。
+
+- **語を差し替えても、機能語と読点の癖は残る。** Zaitsu & Jin (2023) は、日本語の心理学論文と、同じ題で GPT-3.5 / GPT-4 に書かせた文章（各約1,000字）を、話題に依存しにくい4種の文体特徴（品詞の2連鎖、助詞の2連鎖、読点の位置、機能語の使用率）で比べた。機能語の使用率だけでランダムフォレストの正解率は98.1%、4種すべてを使うと100%（leave-one-out 交差検証）で識別できた。第2層の禁止語を消しても、助詞・助動詞・接続詞・副詞の使い方と「は、」「が、」の打ち方はほとんど変わらない
+- **humanize した文章も、読み慣れた人には見抜かれる。** Russell et al. (2025) では、LLM を日常的に文章作成に使う5人の多数決が、判定者自身の手がかりを基にした指示で「人間らしく」書かせた AI 記事30本と人間の記事30本の計60本を、すべて正しく判定した。書き直し後も残った手がかりは、語彙・定型的な文と構成・独自性の欠如などである
+- **くだけた語を足すだけでは人間らしくならない。** 同じ研究で、5人のうち1人は短縮形やスラングなどのくだけた表現を人間の証拠とみなしており、その1人は humanize 済みの AI 記事をほぼすべて人間が書いたと判定した（他の判定者の検出率は以前の実験から大きく変わらなかった）。casual モードで体温を入れる目的は、実際の体験と意見を書くことであって、口語の飾りを散らすことではない
+- **英語の研究では、指示チューニングされたモデルは名詞偏重で情報を詰め込んだ文体になり、くだけた文体を指示しても変わらない。** Reinhart et al. (2025) は、人間と比べて現在分詞節を2〜5倍、名詞化を1.5〜2倍の頻度で使うと報告している。日本語で直接測った研究ではないが、第2層12（漢語の過剰連続）の「〜の実施」「〜の向上を図る」型の名詞化はこれに対応すると考えられる
+
+**判定には使わない。** AI 判定器は、語彙が限られた文章を誤って AI と判定しやすい。Liang et al. (2023) では、7種の判定器が非英語母語話者の TOEFL 作文91本の平均61.22%を AI と誤判定し、少なくとも1つの判定器に AI とされたものは97.8%に達した。また、言い換えモデルを1回通すだけで判定は大きく外れる（Krishna et al. 2023：DetectGPT の検出率が、誤検出率1%の条件で70.3%から4.6%へ低下）。したがって、このスキルの検出結果や `references/ai-score-rubric.md` の点数を、誰かが AI を使った証拠として扱ってはいけない。
+
+---
+
 ## プロセス（必ずこの順で）
 
 1. **モード判定**（§0）。該当 modes/*/MODE.md を読む。
@@ -110,7 +123,7 @@ blader/humanizer（33パターン＋誤検出ガード＋プロセス）／ jala
 
 ## 構造・リズムの規律（anti-ai-slop由来・全モード）
 
-- **文長を揺らす。** 同じ長さの文が3つ続いたら赤信号。最も測定しやすいAI検出シグナル。
+- **文長を揺らす。** 同じ長さの文が3つ続いたら赤信号。測定しやすいシグナルなので、`scripts/style_stats.py` で文長の変動係数と「同じ長さの3連続」を数える。
 - **パラタキシスを避ける。** 短い断定文の羅列（「Xだ。Yだ。Zだ。」）は従属節・接続で関係を見せる（※casualの意図的短文リズムは別。MODE.md参照）。
 - **句読点の規律。** 全角ダッシュ禁止。感嘆符は乱発しない。三点リーダーは余韻のときだけ。
 - **箇条書きは控えめに。** 文で書けるなら文で。
@@ -131,7 +144,9 @@ blader/humanizer（33パターン＋誤検出ガード＋プロセス）／ jala
 
 人間が書いてもこれらは出る。**単独で1個出ただけでは確定しない。** 正当な文章を削り殺さない。
 
-確定の根拠にならないもの（単独では）: 完璧な文法・一貫した文体／硬い語彙そのもの（AIが過剰なのは*特定の*語）／接続詞1個／ダッシュ1個・絵文字1個（OS/エディタの自動変換）／短い断定文1個／出典のなさ。
+確定の根拠にならないもの（単独では）: 完璧な文法・一貫した文体／硬い語彙そのもの（AIが過剰なのは*特定の*語）／接続詞1個／ダッシュ1個・絵文字1個（OS/エディタの自動変換）／短い断定文1個／出典のなさ／**中立的な語調**／**語彙の少なさ・平易さ**。
+
+最後の2つは研究で誤検出の原因と分かっている。Russell et al. (2025) では、LLM に不慣れな判定者ほど、中立的な語調や耳慣れない語の使用を AI の証拠とみなし、誤検出を増やしていた。熟達した判定者は、珍しい語一般ではなく *AI が過剰に使う特定の語* を見ていた。また、文法の正確さは人間らしさの証拠にならない。誤りが多いのはむしろ人間のほうである。語彙の少ない平易な文章が AI と誤判定されやすいことは Liang et al. (2023) が示している。
 → **クラスタで判断する。** ダッシュ＋三点セット＋「画期的」＋「今後の展開が注目」が同居して初めて確定。
 
 残すべき「人間の証」: 捏造しにくい具体的細部（実在の固有名・変な数字）／矛盾した感情・葛藤／年代依存のネタ／文長の自然な揺らぎ／（academic）論理を運ぶ密な接続詞群＋盛り語ゼロ。
@@ -150,11 +165,32 @@ blader/humanizer（33パターン＋誤検出ガード＋プロセス）／ jala
 - [ ] 段落を1つ消して前後が破綻しないなら独立しすぎ（＝AI的）
 - [ ] 一文ずつ「これを人間が書くか？」。引っかかったらそこが臭い
 - [ ] **モード適合**：casual=声/体温が入ったか・中立逃げしてないか／academic=だ・である維持・接続裸消ししてない・段落結束OK／business=敬体・簡潔・スラング混入なし・AI的丁寧テンプレなし
+- [ ] 引用・発言を入れた場合、全員が本文と同じ口調で話していないか（Russell et al. 2025 の手がかり。作った引用は地の文と同じ声になる）
+- [ ] 説明しすぎていないか。結論を言ったあとに同じことを言い直していないか
 - [ ] 読み返して「AIが書いた」と感じないか。感じたらもう一周
 
 ---
 
+## 補助スクリプト
+
+`scripts/style_stats.py` は文長・読点・文頭の接続詞・文末の型を数える。判定器ではない。本人が素で書いた過去の文章を `--baseline` に渡し、書き換え後の文章と並べて**どこが本人から外れているか**を見る用途に使う。
+
+```bash
+python3 scripts/style_stats.py draft.md --baseline ~/writing/diary/*.txt
+```
+
 ## 参考・出典
+
+研究論文（いずれも無料で公開されている原著。数値は各論文の測定時点のモデルでの値）:
+
+- Zaitsu, W., & Jin, M. (2023). Distinguishing ChatGPT(-3.5, -4)-generated and human-written papers through Japanese stylometric analysis. *PLOS ONE* 18(8): e0288453. arXiv:2304.05534
+- Russell, J., Karpinska, M., & Iyyer, M. (2025). People who frequently use ChatGPT for writing tasks are accurate and robust detectors of AI-generated text. *ACL 2025*. arXiv:2501.15654
+- Reinhart, A., et al. (2025). Do LLMs write like humans? Variation in grammatical and rhetorical styles. *PNAS* 122, e2422455122. arXiv:2410.16107
+- Kobak, D., et al. (2025). Delving into LLM-assisted writing in biomedical publications through excess vocabulary. *Science Advances* 11(27). arXiv:2406.07016
+- Liang, W., et al. (2023). GPT detectors are biased against non-native English writers. *Patterns*. arXiv:2304.02819
+- Krishna, K., et al. (2023). Paraphrasing evades detectors of AI-generated text, but retrieval is an effective defense. *NeurIPS 2023*. arXiv:2303.13408
+
+実践資料:
 
 - [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)（WikiProject AI Cleanup）
 - [blader/humanizer](https://github.com/blader/humanizer) / [jalaalrd/anti-ai-slop-writing](https://github.com/jalaalrd/anti-ai-slop-writing) / [gonta223/humanizer-ja](https://github.com/gonta223/humanizer-ja) / [makotofalcon/humanizer-ja](https://github.com/makotofalcon/humanizer-ja) / [matsuikentaro1/humanizer_academic](https://github.com/matsuikentaro1/humanizer_academic)
