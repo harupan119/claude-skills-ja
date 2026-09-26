@@ -1,0 +1,69 @@
+{
+  "textlint-rule-ja-no-abusage": {
+    "files": {
+      "LICENSE": "5ee2d2e79a808b535787b332030fcdee313e3b659829f7cfccaae7d2c6aa4c18",
+      "README.md": "0de5ef5a441fceb37f5a066abf1fc892b395b0fc485b3af4b8fbed1357657d15",
+      "dict/prh.yml": "7f6bf7ae86059d33dc76bfa256afe30f3a90a5181759f0e158d0071c11750287",
+      "src/dictionary.ts": "232cc2764d7401cf0faab4a4eeb78c05226cb6be040779825e54f299a101b677"
+    },
+    "retrieved": "2026-09-26"
+  },
+  "textlint-rule-ja-no-redundant-expression": {
+    "files": {
+      "LICENSE": "5ee2d2e79a808b535787b332030fcdee313e3b659829f7cfccaae7d2c6aa4c18",
+      "README.md": "d784bd5d8dcf2ddfa4c20d94a70abf984a2579dfb4bcc3fc0031a87c35cf9fb9",
+      "src/dictionary.ts": "16cc19144a0d50a2336f54f5e91a0d69a1dcce54229ceb94495ab740b2d72c71"
+    },
+    "retrieved": "2026-09-26"
+  },
+  "textlint-rule-ja-no-weak-phrase": {
+    "files": {
+      "LICENSE": "5ee2d2e79a808b535787b332030fcdee313e3b659829f7cfccaae7d2c6aa4c18",
+      "README.md": "62dcf7d2c0162b5be8766621d27e071b38638d5ae020281f7d00f33f8bac96a2",
+      "src/dict.js": "d5213aeb5b71f2e6534c278371ea3759756e89c46b2073f4120d4e58924dab8f"
+    },
+    "retrieved": "2026-09-26"
+  },
+  "textlint-rule-no-double-negative-ja": {
+    "files": {
+      "LICENSE": "d1ff68b313b5b44635a4ff21399af8bca1d949b2663ade036b2112707f5e174e",
+      "README.md": "9ef5f401c253c6c5937600eb4037b51bbab8cf4c74e41d82760fe4f14aa81f64",
+      "src/rules/naidemo-nai.js": "74b34d020383c7beae05cf414077eb8b33aeb15d33bee6be00181680595a8521",
+      "src/rules/naikotoha-nai.js": "c51469e7d5093edb31b89e5a01169b2d7a0f79cef67c0c91e9019fa81226b2f4",
+      "src/rules/naimonodeha-nai.js": "7f62552c4b6263a713e31a7d812d66291a948cd0526df5c108cb0fc27bb8aa51",
+      "src/rules/naitohaiikire-nai.js": "d8dc9e13639735863cab754fde6856bac70542a6e7dc370b546a612172991baa",
+      "src/rules/naitohakagira-nai.js": "2769bd4dafc0a2a79b1755b12883a543887a32bdae1ac13ed093f9c830679029",
+      "src/rules/naiwakedeha-nai.js": "de1815eb2d97929885a28449b48ecaee0dfaf2c93fade58a49f5123f2fa5c8c5",
+      "src/rules/nakuha-nai.js": "789db5e67f30642e895bcf1b84f0ba2506c7beb8a0c0d235ef96cf386b94e2a7"
+    },
+    "retrieved": "2026-09-26"
+  },
+  "textlint-rule-no-doubled-joshi": {
+    "files": {
+      "LICENSE": "d1ff68b313b5b44635a4ff21399af8bca1d949b2663ade036b2112707f5e174e",
+      "README.md": "4c64f20403cdc52a3d93de573c30e54b00892904334c29332f2be268850db39a"
+    },
+    "retrieved": "2026-09-26"
+  },
+  "textlint-rule-no-dropping-the-ra": {
+    "files": {
+      "LICENSE": "d1ff68b313b5b44635a4ff21399af8bca1d949b2663ade036b2112707f5e174e",
+      "README.md": "ba435a7400e504f54d0f3dbf014b13ecb26bfd2f261364c78f874a140879ef68"
+    },
+    "retrieved": "2026-09-26"
+  },
+  "textlint-rule-preset-JTF-style": {
+    "files": {
+      "LICENSE": "d1ff68b313b5b44635a4ff21399af8bca1d949b2663ade036b2112707f5e174e",
+      "README.md": "418f002b0981f27cb98ebac51d2a412f4b48753f8a9864cc7d3740d1c0a580b4"
+    },
+    "retrieved": "2026-09-26"
+  },
+  "textlint-rule-preset-ja-technical-writing": {
+    "files": {
+      "LICENSE": "5ee2d2e79a808b535787b332030fcdee313e3b659829f7cfccaae7d2c6aa4c18",
+      "README.md": "8ff4bce7901dba4f1de622c42af5da6f17e95d2a9591a7a689c8af09fa395e46"
+    },
+    "retrieved": "2026-09-26"
+  }
+}

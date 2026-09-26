@@ -1,0 +1,191 @@
+{
+  "policy": "redistributable=true かつ license_verified=true のものだけ mirror/ に置き git 管理する。それ以外は mirror/_local/（gitignore）。",
+  "sources": [
+    {
+      "id": "textlint-rule-preset-ja-technical-writing",
+      "kind": "git",
+      "url": "https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing.git",
+      "commit": "5e73caaf8700db90408bb133b0d792aaea4337d6",
+      "paths": [
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "license_verified": true,
+      "redistributable": true,
+      "used_for": "文長・読点数・漢字連続・文体混在などの定量基準",
+      "title": "textlint-rule-preset-ja-technical-writing"
+    },
+    {
+      "id": "textlint-rule-preset-JTF-style",
+      "kind": "git",
+      "url": "https://github.com/textlint-ja/textlint-rule-preset-JTF-style.git",
+      "commit": "2186273a276e5c0acf60fa359f21c537d61730f1",
+      "paths": [
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT（コード）/ CC BY-SA（JTF日本語標準スタイルガイド2.0 由来の規則記述）",
+      "license_verified": true,
+      "redistributable": true,
+      "used_for": "JTF日本語標準スタイルガイドの規則一覧（記号・数字・スペース）",
+      "title": "textlint-rule-preset-JTF-style"
+    },
+    {
+      "id": "textlint-rule-ja-no-redundant-expression",
+      "kind": "git",
+      "url": "https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression.git",
+      "commit": "409f38e802bfaa969ab21416f7ce2275209d5c2b",
+      "paths": [
+        "LICENSE",
+        "README.md",
+        "src/dictionary.ts"
+      ],
+      "license": "MIT",
+      "license_verified": true,
+      "redistributable": true,
+      "used_for": "冗長表現の辞書",
+      "title": "textlint-rule-ja-no-redundant-expression"
+    },
+    {
+      "id": "textlint-rule-ja-no-weak-phrase",
+      "kind": "git",
+      "url": "https://github.com/textlint-ja/textlint-rule-ja-no-weak-phrase.git",
+      "commit": "7aef4bd64ced81ae3fa2c1147ad102a2b64fc870",
+      "paths": [
+        "LICENSE",
+        "README.md",
+        "src/dict.js"
+      ],
+      "license": "MIT",
+      "license_verified": true,
+      "redistributable": true,
+      "used_for": "弱い表現の辞書",
+      "title": "textlint-rule-ja-no-weak-phrase"
+    },
+    {
+      "id": "textlint-rule-ja-no-abusage",
+      "kind": "git",
+      "url": "https://github.com/textlint-ja/textlint-rule-ja-no-abusage.git",
+      "commit": "1e523f8b1dc2f600bc8aed2fe3e8bcf26345dd05",
+      "paths": [
+        "LICENSE",
+        "README.md",
+        "src/dictionary.ts",
+        "dict/prh.yml"
+      ],
+      "license": "MIT",
+      "license_verified": true,
+      "redistributable": true,
+      "used_for": "誤用の辞書",
+      "title": "textlint-rule-ja-no-abusage"
+    },
+    {
+      "id": "textlint-rule-no-double-negative-ja",
+      "kind": "git",
+      "url": "https://github.com/textlint-ja/textlint-rule-no-double-negative-ja.git",
+      "commit": "79d2e7a53509546320de5186232defcf6e39a2cf",
+      "paths": [
+        "LICENSE",
+        "README.md",
+        "src/rules/naidemo-nai.js",
+        "src/rules/naikotoha-nai.js",
+        "src/rules/naimonodeha-nai.js",
+        "src/rules/naitohaiikire-nai.js",
+        "src/rules/naitohakagira-nai.js",
+        "src/rules/naiwakedeha-nai.js",
+        "src/rules/nakuha-nai.js"
+      ],
+      "license": "MIT",
+      "license_verified": true,
+      "redistributable": true,
+      "used_for": "二重否定の型",
+      "title": "textlint-rule-no-double-negative-ja"
+    },
+    {
+      "id": "textlint-rule-no-doubled-joshi",
+      "kind": "git",
+      "url": "https://github.com/textlint-ja/textlint-rule-no-doubled-joshi.git",
+      "commit": "6027ba861320e81f5f16e800f98723eba3771103",
+      "paths": [
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "license_verified": true,
+      "redistributable": true,
+      "used_for": "同一助詞の連続",
+      "title": "textlint-rule-no-doubled-joshi"
+    },
+    {
+      "id": "textlint-rule-no-dropping-the-ra",
+      "kind": "git",
+      "url": "https://github.com/textlint-ja/textlint-rule-no-dropping-the-ra.git",
+      "commit": "15296bc9775c954dac02b5711428e920bcb015ba",
+      "paths": [
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "license_verified": true,
+      "redistributable": true,
+      "used_for": "ら抜き言葉",
+      "title": "textlint-rule-no-dropping-the-ra"
+    },
+    {
+      "id": "plos-mensh-kording-2017",
+      "kind": "http",
+      "filename": "journal.pcbi.1005619.pdf",
+      "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1005619&type=printable",
+      "title": "Mensh B, Kording K. Ten simple rules for structuring papers. PLOS Comput Biol 13(9): e1005619, 2017",
+      "license": "CC BY 4.0（PLOS の標準。取得後に本文の表示で確認する）",
+      "license_verified": false,
+      "redistributable": false,
+      "used_for": "論文構成（文脈-内容-結論、段落の一主張）"
+    },
+    {
+      "kind": "http",
+      "license_verified": false,
+      "redistributable": false,
+      "id": "jtf-style-guide-3",
+      "filename": "jtf_style_guide.pdf",
+      "url": "https://www.jtf.jp/pdf/jtf_style_guide.pdf",
+      "title": "JTF日本語標準スタイルガイド（翻訳用）第3.0版, 日本翻訳連盟, 2019",
+      "license": "未確認（2.0 は CC BY-SA。3.0 を CC BY 4.0 とする二次情報あり）",
+      "used_for": "表記規則の原典"
+    },
+    {
+      "kind": "http",
+      "license_verified": false,
+      "redistributable": false,
+      "id": "bunka-kobunsho-2022",
+      "filename": "kobunsho_sakusei_no_kangaekata.pdf",
+      "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/93651301_01.pdf",
+      "title": "公用文作成の考え方（建議）, 文化審議会, 2022-01-07",
+      "license": "未確認（文化庁サイトの利用規約に従う）",
+      "used_for": "表記・用語・文の書き方（business / academic）"
+    },
+    {
+      "kind": "http",
+      "license_verified": false,
+      "redistributable": false,
+      "id": "sist02-2007",
+      "filename": "SIST02_2007.pdf",
+      "url": "https://www.tcb.kais.kyoto-u.ac.jp/wp-content/uploads/2020/06/SIST02-%E5%8F%82%E7%85%A7%E6%96%87%E7%8C%AE%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9_2007.pdf",
+      "title": "SIST 02-2007 参照文献の書き方, 科学技術振興機構",
+      "license": "未確認。URL は京都大学の再掲で、JST の一次配布ではない",
+      "used_for": "参考文献の書式"
+    },
+    {
+      "kind": "http",
+      "license_verified": false,
+      "redistributable": false,
+      "id": "gopen-swan-1990",
+      "filename": "gopen_swan_1990.pdf",
+      "url": "https://www.usenix.org/sites/default/files/gopen_and_swan_science_of_scientific_writing.pdf",
+      "title": "Gopen GD, Swan JA. The Science of Scientific Writing. American Scientist 78: 550-558, 1990",
+      "license": "著作権あり（再配布不可として扱う）",
+      "used_for": "読み手の期待位置（主題・強調位置）"
+    }
+  ]
+}

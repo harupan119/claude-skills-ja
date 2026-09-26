@@ -54,6 +54,7 @@ description: 既存レポート（.md本文）の文字数を実質的な内容�
 ### 6. AI臭チェック＋AI度判定（main）
 - `humanizer-ja-modes` の **academic モード**を適用。下記スクリプトで機械検出し、casual 化はせず検出パターンのみ書き換える。register維持・接続詞の裸消し禁止・段落結束は MODE.md に従う。
 - 表紙メタデータの太字ラベル（科目名・氏名等）は対象外。接続詞・否定文も「乱用」でなければ放置。
+- 表記・文体は `humanizer-ja-modes/scripts/ja_style_check.py report.md --mode academic` で点検する。文長・読点・文体混在・冗長表現・二重否定を行番号つきで出す。増量ではサブエージェントごとに文の癖が違うため、統合後に文体混在と「することができる」が出やすい。
 - **書き換え後、`humanizer-ja-modes` の `references/ai-score-rubric.md` で AI度を採点する。** スコア・判定ラベル・根拠（どのパターンがどこに）を出し、academic では register違反/段落結束崩れも加点。**目安：AI度41以上（混在）なら、強tellを潰してもう一周。提出は40以下を目標**にする。
 
 ### 7. 字数検証

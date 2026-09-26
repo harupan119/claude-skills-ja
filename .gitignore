@@ -5,3 +5,6 @@ skills/humanizer-ja-modes/modes/casual/voice-print-ja.md
 __pycache__/
 *.pyc
 .DS_Store
+
+# ライセンス未確認・再配布不可の原本。手元参照専用（sources/mirror.py が置く）
+sources/mirror/_local/

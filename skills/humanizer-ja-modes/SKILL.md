@@ -52,7 +52,7 @@ blader/humanizer（33パターン＋誤検出ガード＋プロセス）／ jala
 ## プロセス（必ずこの順で）
 
 1. **モード判定**（§0）。該当 modes/*/MODE.md を読む。
-2. **検出**：第1〜3層をスキャン。`references/banned-ja.md` の語・フレーズを当たる。
+2. **検出**：第1〜3層をスキャン。`references/banned-ja.md` の語・フレーズを当たる。表記・文体の崩れ（文長・読点・文体混在・二重否定・誤用）は `scripts/ja_style_check.py --mode <モード>` で機械的に洗い出す（基準と出典は `references/style-metrics.md`）。
 3. **草稿**：問題箇所を書き直す。**消すだけにせず、接続を裸で消さない**（モード別方針に従い、何を残し何を入れるか決める）。
 4. **★アンチAI監査★**：他人の文章として読み返し「どこがAI生成っぽいか」を自問。下のチェックリストで残存マーカーを洗う。
 5. **最終版**：監査で見つけた違和感を全部直す。妥協しない。
@@ -150,6 +150,7 @@ blader/humanizer（33パターン＋誤検出ガード＋プロセス）／ jala
 - [ ] 段落を1つ消して前後が破綻しないなら独立しすぎ（＝AI的）
 - [ ] 一文ずつ「これを人間が書くか？」。引っかかったらそこが臭い
 - [ ] **モード適合**：casual=声/体温が入ったか・中立逃げしてないか／academic=だ・である維持・接続裸消ししてない・段落結束OK／business=敬体・簡潔・スラング混入なし・AI的丁寧テンプレなし
+- [ ] `scripts/ja_style_check.py` を最終版に通したか。残った指摘は、固有名詞・引用など正当な例外だけか
 - [ ] 読み返して「AIが書いた」と感じないか。感じたらもう一周
 
 ---
@@ -159,3 +160,4 @@ blader/humanizer（33パターン＋誤検出ガード＋プロセス）／ jala
 - [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)（WikiProject AI Cleanup）
 - [blader/humanizer](https://github.com/blader/humanizer) / [jalaalrd/anti-ai-slop-writing](https://github.com/jalaalrd/anti-ai-slop-writing) / [gonta223/humanizer-ja](https://github.com/gonta223/humanizer-ja) / [makotofalcon/humanizer-ja](https://github.com/makotofalcon/humanizer-ja) / [matsuikentaro1/humanizer_academic](https://github.com/matsuikentaro1/humanizer_academic)
 - 国内のAI臭分析（mieru-ca「これにより」分析、note「AIっぽい文章表現大全」ほか）
+- 表記・文体の定量基準：[textlint-ja](https://github.com/textlint-ja) のルール群と『JTF日本語標準スタイルガイド』。原本はリポジトリの `sources/mirror/` に固定してある。対応表は [references/style-metrics.md](references/style-metrics.md)
