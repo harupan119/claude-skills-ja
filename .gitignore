@@ -5,3 +5,6 @@ skills/humanizer-ja-modes/modes/casual/voice-print-ja.md
 __pycache__/
 *.pyc
 .DS_Store
+
+# 再配布できない論文の原本（docs/papers/fetch_papers.py --fetch で手元に取得する）
+docs/papers/cache/

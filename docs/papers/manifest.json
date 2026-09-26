@@ -1,0 +1,293 @@
+{
+  "version": 1,
+  "retrieved": "2026-09-26",
+  "papers": [
+    {
+      "key": "zaitsu_japanese_stylometry",
+      "title": "Zaitsu & Jin (2023). Distinguishing ChatGPT(-3.5, -4)-generated and human-written papers through Japanese stylometric analysis. PLOS ONE 18(8)",
+      "url": "https://arxiv.org/pdf/2304.05534v3",
+      "landing": "https://arxiv.org/abs/2304.05534v3",
+      "license": "arXiv-nonexclusive",
+      "redistributable": false,
+      "sha256": "bb4eb365fce634cb6f8c57e22cd289e6b6dc103df602736592b0dfb1a7ff72da",
+      "bytes": 548341,
+      "used_in": [
+        "humanizer-ja-modes"
+      ]
+    },
+    {
+      "key": "kobak_excess_vocab",
+      "title": "Kobak et al. (2025). Delving into LLM-assisted writing in biomedical publications through excess vocabulary. Science Advances 11(27)",
+      "url": "https://arxiv.org/pdf/2406.07016v5",
+      "landing": "https://arxiv.org/abs/2406.07016v5",
+      "license": "CC-BY-SA-4.0",
+      "redistributable": true,
+      "sha256": "0e1708abbd497c77c6b1ecc22641d818b7f1b12b6e2032fe17c85396004e6264",
+      "bytes": 4894861,
+      "used_in": [
+        "humanizer-ja-modes"
+      ]
+    },
+    {
+      "key": "liang_detectors_biased_nonnative",
+      "title": "Liang et al. (2023). GPT detectors are biased against non-native English writers. Patterns",
+      "url": "https://arxiv.org/pdf/2304.02819v3",
+      "landing": "https://arxiv.org/abs/2304.02819v3",
+      "license": "arXiv-nonexclusive",
+      "redistributable": false,
+      "sha256": "9019ad9a465a7e5a6d13e372a1eccbb51321aa50a046e4510385865234194efb",
+      "bytes": 2004775,
+      "used_in": [
+        "humanizer-ja-modes"
+      ]
+    },
+    {
+      "key": "krishna_paraphrase_evades",
+      "title": "Krishna et al. (2023). Paraphrasing evades detectors of AI-generated text, but retrieval is an effective defense. NeurIPS 2023",
+      "url": "https://arxiv.org/pdf/2303.13408v2",
+      "landing": "https://arxiv.org/abs/2303.13408v2",
+      "license": "arXiv-nonexclusive",
+      "redistributable": false,
+      "sha256": "bf8572a4a30cf6bc6005be21bde9c7eaf3361721f640a67e122de508065680d7",
+      "bytes": 1127892,
+      "used_in": [
+        "humanizer-ja-modes"
+      ]
+    },
+    {
+      "key": "russell_expert_human_detectors",
+      "title": "Russell, Karpinska & Iyyer (2025). People who frequently use ChatGPT for writing tasks are accurate and robust detectors of AI-generated text. ACL 2025",
+      "url": "https://arxiv.org/pdf/2501.15654v2",
+      "landing": "https://arxiv.org/abs/2501.15654v2",
+      "license": "CC0-1.0",
+      "redistributable": true,
+      "sha256": "1c8d54d8c33ceb65fa65c145b489dc683a148dadf228d6590a71e6e4436931a3",
+      "bytes": 5305662,
+      "used_in": [
+        "humanizer-ja-modes"
+      ]
+    },
+    {
+      "key": "reinhart_llm_grammatical_style",
+      "title": "Reinhart et al. (2025). Do LLMs write like humans? Variation in grammatical and rhetorical styles. PNAS 122",
+      "url": "https://arxiv.org/pdf/2410.16107v2",
+      "landing": "https://arxiv.org/abs/2410.16107v2",
+      "license": "CC-BY-NC-ND-4.0",
+      "redistributable": false,
+      "sha256": "f0bdcb53ed99774d4db44273e0d56e78e3aceb11c1b2b70561f87936541a7c1c",
+      "bytes": 2521846,
+      "used_in": [
+        "humanizer-ja-modes"
+      ]
+    },
+    {
+      "key": "zheng_llm_as_judge",
+      "title": "Zheng et al. (2023). Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. NeurIPS 2023",
+      "url": "https://arxiv.org/pdf/2306.05685v4",
+      "landing": "https://arxiv.org/abs/2306.05685v4",
+      "license": "arXiv-nonexclusive",
+      "redistributable": false,
+      "sha256": "1574982845157569b85c1214bfa9987000384d7a5e3b5fbdcc5a29afec59cb81",
+      "bytes": 1580141,
+      "used_in": [
+        "report-expand",
+        "local-llm-gate"
+      ]
+    },
+    {
+      "key": "panickssery_self_preference",
+      "title": "Panickssery, Bowman & Feng (2024). LLM Evaluators Recognize and Favor Their Own Generations",
+      "url": "https://arxiv.org/pdf/2404.13076v1",
+      "landing": "https://arxiv.org/abs/2404.13076v1",
+      "license": "CC-BY-4.0",
+      "redistributable": true,
+      "sha256": "e1466f5ade6144599fda01deafdd737b4623eaae273d71e4a0099d55b33189d3",
+      "bytes": 1132502,
+      "used_in": [
+        "report-expand",
+        "local-llm-gate"
+      ]
+    },
+    {
+      "key": "huang_cannot_self_correct",
+      "title": "Huang et al. (2024). Large Language Models Cannot Self-Correct Reasoning Yet. ICLR 2024",
+      "url": "https://arxiv.org/pdf/2310.01798v2",
+      "landing": "https://arxiv.org/abs/2310.01798v2",
+      "license": "CC-BY-4.0",
+      "redistributable": true,
+      "sha256": "15e1731e255ec6b217792a1e077926807da77e8e46b69e6c57dda30d67794761",
+      "bytes": 385585,
+      "used_in": [
+        "report-expand",
+        "calendar-scheduling",
+        "local-llm-gate"
+      ]
+    },
+    {
+      "key": "min_factscore",
+      "title": "Min et al. (2023). FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation. EMNLP 2023",
+      "url": "https://arxiv.org/pdf/2305.14251v2",
+      "landing": "https://arxiv.org/abs/2305.14251v2",
+      "license": "arXiv-nonexclusive",
+      "redistributable": false,
+      "sha256": "88f7542131228f320829a67678f5dec2b069a72acf3852b3e563f0c1d03fc8ff",
+      "bytes": 2511276,
+      "used_in": [
+        "report-expand",
+        "local-llm-gate"
+      ]
+    },
+    {
+      "key": "bai_longwriter",
+      "title": "Bai et al. (2024). LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs",
+      "url": "https://arxiv.org/pdf/2408.07055v1",
+      "landing": "https://arxiv.org/abs/2408.07055v1",
+      "license": "arXiv-nonexclusive",
+      "redistributable": false,
+      "sha256": "db5917126134904524974f1ce6429f7e56c42d7bda6b493fa28cca79c2368924",
+      "bytes": 948673,
+      "used_in": [
+        "report-expand"
+      ]
+    },
+    {
+      "key": "liu_lost_in_middle",
+      "title": "Liu et al. (2023). Lost in the Middle: How Language Models Use Long Contexts. TACL",
+      "url": "https://arxiv.org/pdf/2307.03172v3",
+      "landing": "https://arxiv.org/abs/2307.03172v3",
+      "license": "arXiv-nonexclusive",
+      "redistributable": false,
+      "sha256": "653b29619eae2ae4b361d7bdcdc06db4bedcb1b0eabe31814036beca8c1af0b1",
+      "bytes": 747542,
+      "used_in": [
+        "report-expand"
+      ]
+    },
+    {
+      "key": "liu_geval",
+      "title": "Liu et al. (2023). G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment",
+      "url": "https://arxiv.org/pdf/2303.16634v3",
+      "landing": "https://arxiv.org/abs/2303.16634v3",
+      "license": "CC-BY-NC-ND-4.0",
+      "redistributable": false,
+      "sha256": "3a822b8646dccda73b01eda9b07420072daf7601cb0d02d9bbc3b38325ab2fd2",
+      "bytes": 415272,
+      "used_in": [
+        "local-llm-gate"
+      ]
+    },
+    {
+      "key": "fatemi_test_of_time",
+      "title": "Fatemi et al. (2024). Test of Time: A Benchmark for Evaluating LLMs on Temporal Reasoning",
+      "url": "https://arxiv.org/pdf/2406.09170v1",
+      "landing": "https://arxiv.org/abs/2406.09170v1",
+      "license": "CC-BY-4.0",
+      "redistributable": true,
+      "sha256": "9fac3fb07758f206227fb7322f77402490d7ea07196cbb5b79b5cd2afb940b83",
+      "bytes": 709532,
+      "used_in": [
+        "calendar-scheduling"
+      ]
+    },
+    {
+      "key": "lost_in_time_clock_calendar",
+      "title": "Saxena, Gema & Minervini (2025). Lost in Time: Clock and Calendar Understanding Challenges in Multimodal LLMs. ICLR 2025 Workshop",
+      "url": "https://arxiv.org/pdf/2502.05092v2",
+      "landing": "https://arxiv.org/abs/2502.05092v2",
+      "license": "CC-BY-4.0",
+      "redistributable": true,
+      "sha256": "e7618ae74f30de2ac88536edd4e98c895c4a361149e050ff953468e78b3a8c12",
+      "bytes": 1864694,
+      "used_in": [
+        "calendar-scheduling"
+      ]
+    },
+    {
+      "key": "zheng_natural_plan",
+      "title": "Zheng et al. (2024). NATURAL PLAN: Benchmarking LLMs on Natural Language Planning",
+      "url": "https://arxiv.org/pdf/2406.04520v1",
+      "landing": "https://arxiv.org/abs/2406.04520v1",
+      "license": "CC-BY-4.0",
+      "redistributable": true,
+      "sha256": "29f5415f3425668054d91b912c90f7aab1ec7faaecf108478fa7c123db5d563e",
+      "bytes": 1419316,
+      "used_in": [
+        "calendar-scheduling"
+      ]
+    },
+    {
+      "key": "gao_pal",
+      "title": "Gao et al. (2023). PAL: Program-aided Language Models. ICML 2023",
+      "url": "https://arxiv.org/pdf/2211.10435v2",
+      "landing": "https://arxiv.org/abs/2211.10435v2",
+      "license": "CC0-1.0",
+      "redistributable": true,
+      "sha256": "388628b05575ce71a9e8c0dd3a371addcb293f3b4fe31f61d58f7ec99560597b",
+      "bytes": 1180832,
+      "used_in": [
+        "calendar-scheduling"
+      ]
+    },
+    {
+      "key": "liang_mapping_llm_papers",
+      "title": "Liang et al. (2024). Mapping the Increasing Use of LLMs in Scientific Papers",
+      "url": "https://arxiv.org/pdf/2404.01268v1",
+      "landing": "https://arxiv.org/abs/2404.01268v1",
+      "license": "CC-BY-NC-ND-4.0",
+      "redistributable": false,
+      "sha256": "81d34089158db6d380cabafaa5bc7a14cf0720e0af1909f70e2a378e2b823525",
+      "bytes": 4169510,
+      "used_in": []
+    },
+    {
+      "key": "wang_not_fair_evaluators",
+      "title": "Wang et al. (2023). Large Language Models are not Fair Evaluators",
+      "url": "https://arxiv.org/pdf/2305.17926v2",
+      "landing": "https://arxiv.org/abs/2305.17926v2",
+      "license": "arXiv-nonexclusive",
+      "redistributable": false,
+      "sha256": "93f2f3c4cab37ff6237ed55b89f6b28c3b8eceed433a71d8183684b5ff4cb52d",
+      "bytes": 736108,
+      "used_in": []
+    },
+    {
+      "key": "ub_apsys12",
+      "title": "Wang et al. (2012). Undefined Behavior: What Happened to My Code? APSys 2012",
+      "url": "https://pdos.csail.mit.edu/papers/ub:apsys12.pdf",
+      "landing": "https://pdos.csail.mit.edu/papers/ub:apsys12.pdf",
+      "license": "publisher-copyright",
+      "redistributable": false,
+      "sha256": "debe9085a7c7eacf9b2b45bc40e8c0acaa92addc2b84e702f57396a5a2c77c60",
+      "bytes": 143483,
+      "used_in": [
+        "c-strict-verify"
+      ]
+    },
+    {
+      "key": "stack_sosp13",
+      "title": "Wang et al. (2013). Towards Optimization-Safe Systems: Analyzing the Impact of Undefined Behavior. SOSP 2013",
+      "url": "https://pdos.csail.mit.edu/papers/stack:sosp13.pdf",
+      "landing": "https://pdos.csail.mit.edu/papers/stack:sosp13.pdf",
+      "license": "publisher-copyright",
+      "redistributable": false,
+      "sha256": "9031dbc4ff318915da2dc998bdd7ec11084eac3d17d78f890b99e83f0d6015f5",
+      "bytes": 245065,
+      "used_in": [
+        "c-strict-verify"
+      ]
+    },
+    {
+      "key": "asan_atc12",
+      "title": "Serebryany et al. (2012). AddressSanitizer: A Fast Address Sanity Checker. USENIX ATC 2012",
+      "url": "https://www.usenix.org/system/files/conference/atc12/atc12-final39.pdf",
+      "landing": "https://www.usenix.org/conference/atc12/technical-sessions/presentation/serebryany",
+      "license": "publisher-copyright",
+      "redistributable": false,
+      "sha256": "adf8b68d3dfeb8fac172e16e4e985a806226a9f904708c12a101d2b765b758e7",
+      "bytes": 218424,
+      "used_in": [
+        "c-strict-verify"
+      ]
+    }
+  ]
+}
