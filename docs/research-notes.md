@@ -71,6 +71,6 @@ Notion 系と typst-ja-pdf は API・組版の実務知識が中心で、研究�
 - **Serebryany et al. (2012)**, *USENIX ATC 2012*, "AddressSanitizer"
   平均73%の速度低下・3.4倍のメモリで、範囲外アクセスと解放後使用を発生時点で検出。
 
-## 入手先
+## 入手先と原本
 
-arXiv 番号のあるものは `https://arxiv.org/abs/<番号>` から、C の3本は著者所属機関（MIT PDOS）と USENIX の公開ページから無料で読める。
+原本は [docs/papers/](papers/) に、取得元URL（arXiv は版番号つき）・ライセンス・SHA-256 つきで固定してある。再配布可能な8本は PDF を同梱し、残りは `python3 docs/papers/fetch_papers.py --fetch` で同じ版を取得してハッシュを検証できる。上に書いた要点は、そこに記録した版の本文から取ったものである。
