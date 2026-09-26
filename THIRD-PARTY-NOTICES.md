@@ -28,6 +28,19 @@ MIT ライセンスの全文は各リポジトリの `LICENSE` を参照のこ�
 
 出典の記載漏れ、あるいは意図しない複製が含まれているとお考えの場合は、Issue で指摘してほしい。確認のうえ、削除または帰属の追記で対応する。
 
+## textlint-ja のルール群と JTF日本語標準スタイルガイド
+
+`skills/humanizer-ja-modes/references/style-metrics.md` と `scripts/ja_style_check.py` の基準値・規則は、以下を参照して日本語で書き直したものである。スクリプトは textlint のコードを含まず、規則を正規表現で独自に実装している。
+
+| リポジトリ | ライセンス | 著作権表示 |
+|---|---|---|
+| [textlint-ja](https://github.com/textlint-ja) の各ルール（preset-ja-technical-writing、ja-no-redundant-expression、ja-no-weak-phrase、ja-no-abusage、no-double-negative-ja、no-doubled-joshi、no-dropping-the-ra）| MIT | Copyright (c) 2015-2016 azu |
+| [textlint-rule-preset-JTF-style](https://github.com/textlint-ja/textlint-rule-preset-JTF-style) | MIT（コード）／CC BY-SA（規則の記述）| 規則の記述は「JTF日本語標準スタイルガイド2.0」(Japan Translation Federation, CC BY-SA, www.jtf.jp) を改変したもの |
+
+参照した版は `sources/manifest.json` にコミットハッシュで固定し、原本の該当ファイルとライセンス文を `sources/mirror/` に複製して同梱している。複製は各ライセンスの条件（著作権表示とライセンス文の同梱）に従う。
+
+`sources/mirror/textlint-rule-preset-JTF-style/README.md` は CC BY-SA の規則記述を含むため、このファイルに限り CC BY-SA の条件で再配布する。`style-metrics.md` では JTF の規則を項番とともに要約しており、規則の文言そのものは写していない。
+
 ## フォントについて
 
 `skills/typst-ja-pdf` は MS 明朝・MS ゴシックを用いる手順を含むが、**フォントファイルは配布しない。**各自が導入済みの Microsoft Office から自分の環境に複製して使う前提である。Office のライセンスを持たない環境では、ヒラギノや源ノ明朝など手元のフォントに切り替わる。

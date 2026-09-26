@@ -7,7 +7,7 @@
 | スキル | 用途 |
 |---|---|
 | **文章** | |
-| [humanizer-ja-modes](skills/humanizer-ja-modes) | AI が書いた日本語から AI 臭を抜く。口語・学術・ビジネスの3レジスタで書き換え方針を切り替える |
+| [humanizer-ja-modes](skills/humanizer-ja-modes) | AI が書いた日本語から AI 臭を抜く。口語・学術・ビジネスの3レジスタで書き換え方針を切り替える。文長・文体混在・二重否定などの表記点検スクリプトつき |
 | [report-expand](skills/report-expand) | レポートを水増しではなく実質的な内容追加で増量する。分割→並列生成→統合→AI臭チェック→字数検証 |
 | **Notion** | |
 | [notion-router](skills/notion-router) | Notion 系スキルの振り分け。まずここで使い分けを見る |
@@ -44,6 +44,8 @@ done
 
 **出典を書く。** 先行実装から着想を得たものは [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) に、出典・ライセンス・複製の有無の検証結果まで記した。
 
+**根拠の原本を固定する。** 規則の根拠にした文献・辞書は [sources/](sources) に取得元・ライセンス・SHA-256 とともに置いてある。再配布できないものは一覧だけ載せ、手元に取得する。
+
 公開時に環境固有の値をどう外しているかは [PUBLISHING.md](PUBLISHING.md) にある。
 
 ---
@@ -61,6 +63,12 @@ AI が書いた日本語は、消すべきものが**レジスタによって違
 検出は3層構成。記号の残骸（全角ダッシュ・絵文字・太字の乱用）、語彙の偏り（「これにより」「〜することができる」など）、思考構造の型（否定並列、曖昧な権威づけ、体験と固有名の不在）を順に見る。誤検出ガードを持っていて、ダッシュ1個や硬い語彙だけでは AI と断定しない。
 
 `references/ai-score-rubric.md` で AI 度を採点できる。提出前に強い tell が残っていないかを確認する用途。
+
+AI 臭とは別に、人間の文章にも当てる表記の基準を `references/style-metrics.md` に置いた。1文100字・読点3個・漢字連続6字といった値は textlint-ja の既定値、記号と数字の規則は JTF日本語標準スタイルガイドから取っている。`scripts/ja_style_check.py` で行番号つきに洗い出せる。
+
+```bash
+python3 skills/humanizer-ja-modes/scripts/ja_style_check.py report.md --mode academic
+```
 
 **声紋ファイルは同梱していない。** 書き手本人の私的な文章から作るもので、個人情報として扱うべきものだから。作り方と雛形は `modes/casual/voice-print-ja.template.md` にある。無くても一般的な口語の humanize までは動く。
 
